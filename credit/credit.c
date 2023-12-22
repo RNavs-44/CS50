@@ -59,7 +59,7 @@ int main(void)
         n /= 10;
     }
     while (n > 99);
-    if ((n / 10 == 5) && (0 < n % 10 && 6 > n % 10))
+    if ((n / 10 == 5) && (0 < n % 10 && 6 > n % 10) && (len ))
     {
         printf("MASTERCARD\n");
     }
