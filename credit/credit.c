@@ -11,8 +11,9 @@ Luhn's Algorithm:
 bool checksum(long n)
 {
     int sum1 = 0, sum2 = 0, mod;
-    do {
-        sum1 += n%10;
+    do
+    {
+        sum1 += n % 10;
         n /= 10;
 
         mod = n % 10;
@@ -21,7 +22,7 @@ bool checksum(long n)
         sum2 += (mod % 10) + (mod / 10);
     }
     while (n > 0);
-    if ((sum1+sum2) % 10 != 0)
+    if ((sum1 + sum2) % 10 != 0)
     {
         return false;
     }
@@ -30,17 +31,17 @@ bool checksum(long n)
 
 int main(void)
 {
-    long n = get_long ("Number: ");
+    long n = get_long("Number: ");
 
     // check length
-    int len;
+    int len = 0;
     long temp = n;
     while (temp > 0)
     {
         temp = temp / 10;
-        len ++;
+        len++;
     }
-    if (len != 13 || len != 15 || len != 16)
+    if (len != 13 && len != 15 && len != 16)
     {
         printf("INVALID");
         return 0;
