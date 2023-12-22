@@ -8,9 +8,24 @@ Luhn's Algorithm:
 3. If the total’s last digit is 0 (or, put more formally, if the total modulo 10 is congruent to 0), the number is valid!
 */
 
-bool checksum(long x)
+bool checksum(long n)
 {
-    int sum1 = 0, sum2 = 0, total = 0;
+    int sum1 = 0, sum2 = 0, mod;
+    do {
+        sum1 += n%10;
+        n /= 10;
+
+        mod = n % 10;
+        n /= 10;
+        mod *= 2;
+        sum2 += (mod % 10) + (mod / 10);
+    }
+    while (n > 0);
+    if ((sum1+sum2) % 10 != 0)
+    {
+        return false;
+    }
+    return true;
 }
 
 int main(void)
