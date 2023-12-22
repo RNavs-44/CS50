@@ -43,14 +43,14 @@ int main(void)
     }
     if (len != 13 && len != 15 && len != 16)
     {
-        printf("INVALID");
+        printf("INVALID\n");
         return 0;
     }
 
     // check sum
     if (!checksum(n))
     {
-        printf("INVALID");
+        printf("INVALID\n");
         return 0;
     }
 
