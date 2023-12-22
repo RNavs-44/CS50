@@ -59,15 +59,15 @@ int main(void)
         n /= 10;
     }
     while (n > 99);
-    if ((n / 10 == 5) && (0 < n % 10 && 6 > n % 10) && (len ))
+    if ((n / 10 == 5) && (0 < n % 10 && 6 > n % 10) && (len == 16))
     {
         printf("MASTERCARD\n");
     }
-    else if ((n / 10 == 3) && (n % 10 == 4 || n % 10 == 7))
+    else if ((n / 10 == 3) && (n % 10 == 4 || n % 10 == 7) && (len == 15))
     {
         printf("AMEX\n");
     }
-    else if (n / 10 == 4)
+    else if (n / 10 == 4 && (len == 13 || len == 16))
     {
         printf("VISA\n");
     }
