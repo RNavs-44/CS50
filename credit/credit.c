@@ -47,8 +47,31 @@ int main(void)
     }
 
     // check sum
-    if (checksum(n))
+    if (!checksum(n))
     {
-        printf("VALID");
+        printf("INVALID");
+        return 0;
+    }
+
+    do
+    {
+        n /= 10;
+    }
+    while (n > 99);
+    if ((n / 10 == 5) && (0 < n % 10 && 6 > n % 10))
+    {
+        printf("MASTERCARD\n");
+    }
+    else if ((n / 10 == 3) && (n % 10 == 4 || n % 10 == 7))
+    {
+        printf("AMEX\n");
+    }
+    else if (n / 10 == 4)
+    {
+        printf("VISA\n");
+    }
+    else
+    {
+        printf("INVALID\n");
     }
 }
