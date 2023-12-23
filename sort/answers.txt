@@ -1,11 +1,11 @@
-sort1 uses: TODO
+sort1 uses: bubble
 
-How do you know?: TODO
+How do you know?: fast sorting time on sorted list
 
-sort2 uses: TODO
+sort2 uses: merge
 
-How do you know?: TODO
+How do you know?: fastest sorting time
 
-sort3 uses: TODO
+sort3 uses: selection
 
-How do you know?: TODO
+How do you know?: slow sorting time on sorted list
