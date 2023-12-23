@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
+#include <ctype.h>
 
 int main(void)
 {
@@ -9,7 +11,7 @@ int main(void)
     for (int i = 0, len = strlen(text); i < len; i++)
     {
         char c = text[i];
-        if (isaplha(c)
+        if (isalpha(c))
         {
             letters++;
         }
@@ -24,13 +26,14 @@ int main(void)
     }
     float L = letters * (100 / words);
     float S = sentences * (100 / words);
+    printf("%f %f\n", L, S);
     int index = roundf(0.0588 * L - 0.296 * S - 15.8);
     if (index > 16)
     {
-        printf("Grade 16+");
+        printf("Grade 16+\n");
     }
     else
     {
-        printf("Grade %i", index);
+        printf("Grade %i\n", index);
     }
 }
