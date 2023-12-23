@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <math.h>
 
 int main(void)
 {
@@ -18,6 +19,7 @@ int main(void)
         }
         else if (c == '!' || c == '.' || c == '?')
     }
-
+    float L = letters * (100 / words);
+    float S =
     int index = 0.0588 * L - 0.296 * S - 15.8;
 }
