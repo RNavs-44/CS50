@@ -1,8 +1,8 @@
 #include <cs50.h>
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
 #include <ctype.h>
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
@@ -24,12 +24,16 @@ int main(void)
             sentences++;
         }
     }
-    float L = (float)letters * (100 / (float)words);
-    float S = (float)sentences * (100 / (float)words);
+    float L = (float) letters * (100 / (float) words);
+    float S = (float) sentences * (100 / (float) words);
     int index = roundf(0.0588 * L - 0.296 * S - 15.8);
     if (index > 16)
     {
         printf("Grade 16+\n");
+    }
+    else if (index < 1)
+    {
+        printf("Before Grade 1\n");
     }
     else
     {
