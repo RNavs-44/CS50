@@ -48,9 +48,10 @@ int main(int argc, string argv[])
         }
         else if (islower(c))
         {
-            plaintext[i] = toupper(key[c-'a']);
+            plaintext[i] = tolower(key[c-'a']);
         }
     }
 
     printf("ciphertext: %s\n", plaintext);
+    return 0;
 }
