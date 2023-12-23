@@ -18,8 +18,12 @@ int main(void)
             words++;
         }
         else if (c == '!' || c == '.' || c == '?')
+        {
+            sentences++;
+        }
     }
     float L = letters * (100 / words);
-    float S =
-    int index = 0.0588 * L - 0.296 * S - 15.8;
+    float S = sentences * (100 / words);
+    int index = roundf(0.0588 * L - 0.296 * S - 15.8);
+    if (index )
 }
