@@ -26,7 +26,7 @@ int main(void)
     }
     float L = letters * (100 / words);
     float S = sentences * (100 / words);
-    printf("%f %f\n", L, S);
+    printf("%i %i %i\n", letters, words, sentences);
     int index = roundf(0.0588 * L - 0.296 * S - 15.8);
     if (index > 16)
     {
