@@ -24,9 +24,8 @@ int main(void)
             sentences++;
         }
     }
-    float L = letters * (100 / words);
-    float S = sentences * (100 / words);
-    printf("%i %i %i\n", letters, words, sentences);
+    float L = (float)letters * (100 / (float)words);
+    float S = (float)sentences * (100 / (float)words);
     int index = roundf(0.0588 * L - 0.296 * S - 15.8);
     if (index > 16)
     {
