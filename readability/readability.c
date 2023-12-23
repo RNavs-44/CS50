@@ -25,5 +25,12 @@ int main(void)
     float L = letters * (100 / words);
     float S = sentences * (100 / words);
     int index = roundf(0.0588 * L - 0.296 * S - 15.8);
-    if (index )
+    if (index > 16)
+    {
+        printf("Grade 16+");
+    }
+    else
+    {
+        printf("Grade %i", index);
+    }
 }
