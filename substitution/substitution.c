@@ -1,7 +1,7 @@
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
 int main(int argc, string argv[])
 {
@@ -44,11 +44,11 @@ int main(int argc, string argv[])
         char c = plaintext[i];
         if (isupper(c))
         {
-            plaintext[i] = toupper(key[c-'A']);
+            plaintext[i] = toupper(key[c - 'A']);
         }
         else if (islower(c))
         {
-            plaintext[i] = tolower(key[c-'a']);
+            plaintext[i] = tolower(key[c - 'a']);
         }
     }
 
