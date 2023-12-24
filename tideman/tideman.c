@@ -191,9 +191,9 @@ void lock_pairs(void)
 
 bool creates_cycle (int winner, int loser)
 {
-    if (winner == loser)
+    for (int i = 0; i < candidate_count; i++)
     {
-        return false;
+        if (locked[i][winner])
     }
 
 }
