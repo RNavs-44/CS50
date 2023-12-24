@@ -156,7 +156,13 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    for (int i = 0; i < pairs)
+    for (int i = 0; i < pairs_count - 1; i++)
+    {
+        for (int j = 0; j < pairs_count - i - 1; j++)
+        {
+            
+        }
+    }
     return;
 }
 
