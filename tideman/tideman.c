@@ -180,9 +180,22 @@ void lock_pairs(void)
     // TODO
     for (int i = 0; i < pairs_count; i++)
     {
-        
+        locked[pairs[i].winner][pairs[i].loser] = true;
+        if (!creates_cycle(pairs[i].winner)
+        {
+            locked[pairs[i].winner][pairs[i].loser] = false;
+        }
     }
     return;
+}
+
+bool creates_cycle (int winner, int loser)
+{
+    if (winner == loser)
+    {
+        return false;
+    }
+    
 }
 
 // Print the winner of the election
