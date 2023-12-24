@@ -189,6 +189,22 @@ void lock_pairs(void)
     return;
 }
 
+bool creates_cycle_recursive (int source, int dest)
+{
+    if (source == dest)
+    {
+        return true;
+    }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[i][source])
+        {
+            return creates_cycle_recursive(i, dest);
+        }
+    }
+    return false;
+}
+
 bool creates_cycle (int winner, int loser)
 {
     while (winner != loser && winner != -1)
