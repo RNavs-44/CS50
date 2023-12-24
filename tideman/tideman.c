@@ -191,16 +191,27 @@ void lock_pairs(void)
 
 bool creates_cycle (int winner, int loser)
 {
-    while (winner != loser)
+    while (winner != loser && winner != -1)
     {
+        bool found = false;
         for (int i = 0; i < candidate_count; i++)
         {
             if (locked[i][winner])
             {
+                found = true;
                 winner = i;
             }
         }
+        if (!found)
+        {
+            winner = -1;
+        }
     }
+    if (winner == loser)
+    {
+        return true;
+    }
+    return false;
 }
 
 // Print the winner of the election
