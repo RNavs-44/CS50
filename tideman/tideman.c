@@ -26,7 +26,7 @@ int candidate_count;
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
-bool creates_cycle (int winner, int loser);
+bool creates_cycle(int winner, int loser);
 void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
@@ -163,12 +163,12 @@ void sort_pairs(void)
         for (int j = 0; j < pair_count - i - 1; j++)
         {
             votes1 = preferences[pairs[j].winner][pairs[j].loser];
-            votes2 = preferences[pairs[j+1].winner][pairs[j+1].loser];
+            votes2 = preferences[pairs[j + 1].winner][pairs[j + 1].loser];
             if (votes1 < votes2)
             {
                 pair temp = pairs[j];
-                pairs[j] = pairs[j+1];
-                pairs[j+1] = temp;
+                pairs[j] = pairs[j + 1];
+                pairs[j + 1] = temp;
             }
         }
     }
@@ -189,7 +189,7 @@ void lock_pairs(void)
     return;
 }
 
-bool creates_cycle_recursive (int source, int dest)
+bool creates_cycle_recursive(int source, int dest)
 {
     if (source == dest)
     {
@@ -205,7 +205,7 @@ bool creates_cycle_recursive (int source, int dest)
     return false;
 }
 
-bool creates_cycle (int winner, int loser)
+bool creates_cycle(int winner, int loser)
 {
     while (winner != loser && winner != -1)
     {
