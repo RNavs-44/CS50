@@ -194,6 +194,9 @@ bool creates_cycle (int winner, int loser)
     for (int i = 0; i < candidate_count; i++)
     {
         if (locked[i][winner])
+        {
+            winner = i;
+        }
     }
 
 }
