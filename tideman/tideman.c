@@ -161,9 +161,9 @@ void sort_pairs(void)
     {
         for (int j = 0; j < pairs_count - i - 1; j++)
         {
-            votes1 = preferences[pairs[j].winner][pairs[j].loser]
-            votes2 = preferences[pairs[j+1].winner][pairs[j+1].loser]
-            if (votes1 < vote2)
+            votes1 = preferences[pairs[j].winner][pairs[j].loser];
+            votes2 = preferences[pairs[j+1].winner][pairs[j+1].loser];
+            if (votes1 < votes2)
             {
                 pair temp = pairs[j];
                 pairs[j] = pairs[j+1];
@@ -178,6 +178,10 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
+    for (int i = 0; i < pairs_count; i++)
+    {
+        
+    }
     return;
 }
 
