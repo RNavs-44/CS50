@@ -26,6 +26,7 @@ int candidate_count;
 
 // Function prototypes
 bool vote(int rank, string name, int ranks[]);
+bool creates_cycle (int winner, int loser);
 void record_preferences(int ranks[]);
 void add_pairs(void);
 void sort_pairs(void);
@@ -180,10 +181,9 @@ void lock_pairs(void)
     // TODO
     for (int i = 0; i < pairs_count; i++)
     {
-        locked[pairs[i].winner][pairs[i].loser] = true;
-        if (!creates_cycle(pairs[i].winner)
+        if (!creates_cycle(pairs[i].winner, pairs[i].loser)
         {
-            locked[pairs[i].winner][pairs[i].loser] = false;
+            locked[pairs[i].winner][pairs[i].loser] = true;
         }
     }
     return;
@@ -195,7 +195,7 @@ bool creates_cycle (int winner, int loser)
     {
         return false;
     }
-    
+
 }
 
 // Print the winner of the election
