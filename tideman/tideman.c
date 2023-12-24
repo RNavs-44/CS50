@@ -236,9 +236,17 @@ void print_winner(void)
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
+        bool found_source = true;
         for (int j = 0; j < candidate_count; j++)
         {
-            if (locked[i][j])
+            if (locked[j][i])
+            {
+                found_source = false;
+            }
+        }
+        if (found_source)
+        {
+            printf("%s\n", candidates[i])
         }
     }
     return;
