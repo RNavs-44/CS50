@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 int main(int argc, char *argv[])
 {
@@ -14,5 +15,6 @@ int main(int argc, char *argv[])
         printf("Error");
         return 1;
     }
-    
+    typedef uint8_t BYTE;
+
 }
