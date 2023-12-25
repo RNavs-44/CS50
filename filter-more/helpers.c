@@ -8,7 +8,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int column = 0; column < width; column++)
         {
-            int sum = round((image[row][column].rgbtRed + image[row][column].rgbtBlue + image[row][column].rgbtGreen) / 3)
+            int sum = round((image[row][column].rgbtRed + image[row][column].rgbtBlue + image[row][column].rgbtGreen) / 3);
         }
     }
     return;
