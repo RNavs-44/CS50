@@ -116,7 +116,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            temp[row][column].rgbtRed = round(totalRed / count);
+            temp[row][column].rgbtRed = pow()
             temp[row][column].rgbtGreen = round(totalGreen / count);
             temp[row][column].rgbtBlue = round(totalBlue / count);
         }
