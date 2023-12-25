@@ -54,9 +54,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             temp[row][column].rgbtBlue = round(totalBlue / count);
         }
     }
-    for (int row = 0; row < width; row++)
+    for (int row = 0; row < height; row++)
     {
-        for (int column = 0; column < height; column++)
+        for (int column = 0; column < width; column++)
         {
             image[row][column] = temp[row][column];
         }
