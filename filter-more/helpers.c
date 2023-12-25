@@ -97,7 +97,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int column = 0; column < width; column++)
         {
             int count = 0;
-            float totalRed = 0, totalGreen = 0, totalBlue = 0;
+            float GxRed = 0, GxGreen = 0, GxBlue = 0, GyRed = 0, GyGreen = 0, GyBlue = 0;
             int rowCoords[] = { row - 1, row, row + 1 };
             int columnCoords[] = { column - 1, column, column + 1 };
             for (int i = 0; i < 3; i++)
@@ -106,9 +106,12 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
                     if (rowCoords[i] >= 0 && rowCoords[i] < height && columnCoords[j] >= 0 && columnCoords[j] < width)
                     {
-                        GxRed += image[rowCoords[i]][columnCoords[j]].rgbtRed;
-                        totalGreen += image[rowCoords[i]][columnCoords[j]].rgbtGreen;
-                        totalBlue += image[rowCoords[i]][columnCoords[j]].rgbtBlue;
+                        GxRed += image[rowCoords[i]][columnCoords[j]].rgbtRed * Gx[i][j];
+                        GxGreen += image[rowCoords[i]][columnCoords[j]].rgbtGreen * Gx[i][j];
+                        GxBlue += image[rowCoords[i]][columnCoords[j]].rgbtBlue * Gx[i][j];
+                        GyRed += image[rowCoords[i]][columnCoords[j]].rgbtRed * Gy[i][j];
+                        GyGreen += image[rowCoords[i]][columnCoords[j]].rgbtGreen * Gy[i][j];
+                        GyBlue += image[rowCoords[i]][columnCoords[j]].rgbtBlue * Gy[i][j];
                         count++;
                     }
                 }
