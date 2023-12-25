@@ -16,5 +16,9 @@ int main(int argc, char *argv[])
         return 1;
     }
     typedef uint8_t BYTE;
+    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    {
 
+
+    }
 }
