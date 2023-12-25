@@ -42,9 +42,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 {
                     if (rowCoords[i] >= 0 && rowCoords[i] < height && columnCoords[j] >= 0 && columnCoords[j] < width)
                     {
-                        totalRed += image[row][column].rgbtRed;
-                        totalGreen += image[row][column].rgbtGreen;
-                        totalBlue += image[row][column].rgbtBlue;
+                        totalRed += image[i][j].rgbtRed;
+                        totalGreen += image[i][j].rgbtGreen;
+                        totalBlue += image[i][j].rgbtBlue;
                         count++;
                     }
                 }
