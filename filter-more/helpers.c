@@ -42,9 +42,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            temp[row][column].rgbtRed = round(totalRed / (float)count);
-            temp[row][column].rgbtGreen = round(totalGreen / (float)count);
-            temp[row][column].rgbtBlue = round(totalBlue / (float)count);
+            temp[row][column].rgbtRed = round(totalRed / count);
+            temp[row][column].rgbtGreen = round(totalGreen / count);
+            temp[row][column].rgbtBlue = round(totalBlue / count);
         }
     }
     for (int row = 0; row < width; row++)
