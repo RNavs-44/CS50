@@ -48,8 +48,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             int count = 0;
             float totalRed = 0, totalGreen = 0, totalBlue = 0;
-            int rowCoords[] = { row - 1, row, row + 1 };
-            int columnCoords[] = { column - 1, column, column + 1 };
+            int rowCoords[] = {row - 1, row, row + 1};
+            int columnCoords[] = {column - 1, column, column + 1};
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -81,16 +81,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
-    int Gx[3][3] = {
-        {-1, 0, 1},
-        {-2, 0, 2},
-        {-1, 0, 1}
-    };
-    int Gy[3][3] = {
-        {-1, -2, -1},
-        {0, 0, 0},
-        {1, 2, 1}
-    };
+    int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
     RGBTRIPLE temp[height][width];
     for (int row = 0; row < height; row++)
     {
@@ -98,8 +90,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {
             int count = 0;
             float GxRed = 0, GxGreen = 0, GxBlue = 0, GyRed = 0, GyGreen = 0, GyBlue = 0;
-            int rowCoords[] = { row - 1, row, row + 1 };
-            int columnCoords[] = { column - 1, column, column + 1 };
+            int rowCoords[] = {row - 1, row, row + 1};
+            int columnCoords[] = {column - 1, column, column + 1};
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
@@ -119,9 +111,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int finalRed = round(sqrt(GxRed * GxRed + GyRed * GyRed));
             int finalGreen = round(sqrt(GxGreen * GxGreen + GyGreen * GyGreen));
             int finalBlue = round(sqrt(GxBlue * GxBlue + GyBlue * GyBlue));
-            temp[row][column].rgbtRed = finalRed <= 255 ? finalRed: 255;
-            temp[row][column].rgbtGreen = finalGreen <= 255 ? finalGreen: 255;
-            temp[row][column].rgbtBlue = finalBlue <= 255 ? finalBlue: 255;
+            temp[row][column].rgbtRed = finalRed <= 255 ? finalRed : 255;
+            temp[row][column].rgbtGreen = finalGreen <= 255 ? finalGreen : 255;
+            temp[row][column].rgbtBlue = finalBlue <= 255 ? finalBlue : 255;
         }
     }
     for (int row = 0; row < height; row++)
