@@ -26,18 +26,18 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int column = 0; column < width; column++)
         {
             int count = 0;
-            float totalRed = totalGreen = totalBlue = 0;
-            int[] rowCoords = { row - 1, row, row + 1 };
-            int[] colCoords = { column - 1, column, column + 1 }
+            float totalRed = 0, totalGreen = 0, totalBlue = 0;
+            int rowCoords[] = { row - 1, row, row + 1 };
+            int columnCoords[] = { column - 1, column, column + 1 };
             for (int i = 0; i < 3; i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    if (rowCoords[i] >= 0 && rowCoords[i] < width && colCoords[i] >= 0 && colCoords[j] < height)
+                    if (rowCoords[i] >= 0 && rowCoords[i] < width && columnCoords[i] >= 0 && columnCoords[j] < height)
                     {
-                        totalR += image[row][column].rgbtRed;
-                        totalG += image[row][column].rgbtGreen;
-                        totalB += image[row][column].rgbtBlue;
+                        totalRed += image[row][column].rgbtRed;
+                        totalGreen += image[row][column].rgbtGreen;
+                        totalBlue += image[row][column].rgbtBlue;
                         count++;
                     }
                 }
@@ -45,6 +45,13 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             temp[row][column].rgbtRed = round(totalRed / (float)count);
             temp[row][column].rgbtGreen = round(totalGreen / (float)count);
             temp[row][column].rgbtBlue = round(totalBlue / (float)count);
+        }
+    }
+    for (int row = 0; row < width; row++)
+    {
+        for (int column = 0; column < height; column++)
+        {
+            image[row][column] = temp[row][column];
         }
     }
     return;
