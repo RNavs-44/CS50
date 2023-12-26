@@ -21,11 +21,15 @@ int main(int argc, char *argv[])
     }
 
     typedef uint8_t BYTE;
-    bool found_jpeg = false;
-    
+    bool found_jpg = false;
+    int jpg_count = 0;
+    BYTE buffer[block_size];
+    char jpg_name[8];
+    FILE *outptr = NULL;
+
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
-
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff)
 
     }
 }
