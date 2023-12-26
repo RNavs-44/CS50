@@ -31,7 +31,15 @@ int main(int argc, char *argv[])
     {
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            
+            if (found_jpg)
+            {
+                fclose(outptr);
+            }
+            else
+            {
+                found_jpg = true;
+            }
+            sprintf(jpg_name, "%03d.jpg", jpg_count);
         }
 
     }
