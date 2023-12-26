@@ -11,13 +11,18 @@ int main(int argc, char *argv[])
         printf("Usage: ./recover image");
         return 1;
     }
-    FILE *file = fopen(argv[1], "r");
-    if (file == NULL)
+
+
+    FILE *raw_file = fopen(argv[1], "r");
+    if (raw_file == NULL)
     {
-        printf("Error");
+        printf("Could not open file");
         return 1;
     }
+
     typedef uint8_t BYTE;
+    bool found_jpeg = false;
+    
     while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
 
