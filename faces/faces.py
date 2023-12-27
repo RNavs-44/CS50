@@ -3,8 +3,8 @@ def main() :
     print(string)
 
 def convert(s):
-    s.replace("hi", ":::")
-    s.replace(":(", "j")
+    s = s.replace(":)", "🙂")
+    s = s.replace(":(", "😐")
     return s
 
 main()
