@@ -4,6 +4,7 @@ def main() :
 
 def convert(string):
     string.replace(":)", "🙂")
-    string.replace(":()", "😐")
+    string.replace(":(", "😐")
+    return string
 
 main()
