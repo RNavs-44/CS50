@@ -1,2 +1,2 @@
-string = input().lower()
+string = input().replace()
 print(string)
