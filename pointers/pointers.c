@@ -13,10 +13,13 @@ int main(void)
 
     string s = "HI!";
     printf("%p\n", s);
-    char *q = &s[2];
     printf("%p\n", &s[0]);
     printf("%p\n", &s[1]);
     printf("%p\n", &s[2]);
     printf("%p\n", &s[3]);
-    printf("%c\n", *q);
+
+    char *s2 = "HI!";
+    printf("%s\n", s2);
+
+    
 }
