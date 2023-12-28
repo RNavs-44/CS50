@@ -55,10 +55,20 @@ bool load(const char *dictionary)
         }
         strcpy(n->word, "Hello");
         n->next = NULL;
+
         // hash word to obtain hash value
         int index = hash(word);
-        if (table[index])
+
         // insert node into  hash table at that location
+        if (table[index] == NULL)
+        {
+            table[index] = n;
+        }
+        else
+        {
+            n->next = table[index]->next
+            table[index] = n;
+        }
     }
     return false;
 }
