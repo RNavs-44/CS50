@@ -79,7 +79,7 @@ bool load(const char *dictionary)
         {
             return false;
         }
-        strcpy(n->word, "Hello");
+        strcpy(n->word, word);
         n->next = NULL;
 
         // hash word to obtain hash value
