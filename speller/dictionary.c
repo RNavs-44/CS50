@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -51,7 +51,7 @@ unsigned int hash(const char *word)
     int sum = 0;
     for (int j = 0; word[j] != '\0'; j++)
     {
-        sum += str[j];
+        sum += word[j];
     }
     return sum % N;
 }
