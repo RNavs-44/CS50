@@ -53,7 +53,7 @@ unsigned int hash(const char *word)
     int sum = 0;
     for (int j = 0; word[j] != '\0'; j++)
     {
-        sum += word[j];
+        sum += tolower(word[j]);
     }
     return sum % N;
 }
