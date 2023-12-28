@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <strings.h>
 
 #include "dictionary.h"
@@ -68,8 +69,8 @@ bool load(const char *dictionary)
     }
 
     // read strings from file one at a time
-    char word[LENGTH + 1]
-    while (fscanf(file, "%s", word) != "EOF")
+    char word[LENGTH + 1];
+    while (fscanf(file, "%s", word) != EOF)
     {
         // create a new node for each word
         node *n = malloc(sizeof(node));
