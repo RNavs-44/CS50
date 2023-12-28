@@ -6,8 +6,11 @@
 
 int main(void)
 {
-    char *s = "HI!";
-    printf("%c\n", *s);
-    printf("%c\n", *(s + 1));
-    printf("%c\n", *(s + 2));
+    // Get two strings
+    char *s = get_string("s: ");
+    char *t = get_string("t: ");
+
+    // Print strings
+    printf("%p\n", s);
+    printf("%p\n", t);
 }
