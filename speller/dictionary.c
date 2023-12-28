@@ -24,8 +24,20 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    // hash word to obtain hash value
     int index = hash(word);
-    
+
+    // access linked list at that index in hash table
+    cursor = table[index];
+
+    // traverse linked list, looking for word
+    while (cursor != NULL)
+    {
+        if (strcasecmp(cursor->word, word) == 0)
+        {
+            return true;
+        }
+    }
     return false;
 }
 
@@ -36,7 +48,7 @@ unsigned int hash(const char *word)
     int sum = 0;
     for (int j = 0; word[j] != '\0'; j++)
     {
-        sum += tolower(str[j]);
+        sum += str[j];
     }
     return sum % N;
 }
