@@ -37,14 +37,28 @@ bool load(const char *dictionary)
 {
     // TODO
     // open dictionary file
-    fopen ()
+    FILE *file = fopen(dictionary, "r");
+    if (file == NULL)
+    {
+        return false;
+    }
+
     // read strings from file one at a time
-    // create a new node for each word
-    node *n = malloc(sizeof(node));
-    strcpy(n->word, "Hello");
-    n->next = NULL;
-    // hash word to obtain hash value
-    // insert node into  hash table at that location
+    char word[LENGTH + 1]
+    while (fscanf(file, "%s", word) != "EOF")
+    {
+        // create a new node for each word
+        node *n = malloc(sizeof(node));
+        if (n == NULL)
+        {
+            return false;
+        }
+        strcpy(n->word, "Hello");
+        n->next = NULL;
+        // hash word to obtain hash value
+        
+        // insert node into  hash table at that location
+    }
     return false;
 }
 
