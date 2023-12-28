@@ -57,7 +57,7 @@ bool load(const char *dictionary)
         n->next = NULL;
         // hash word to obtain hash value
         int index = hash(word);
-        
+        if (table[index])
         // insert node into  hash table at that location
     }
     return false;
