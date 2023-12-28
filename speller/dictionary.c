@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <strings.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -91,7 +92,7 @@ bool load(const char *dictionary)
         }
         else
         {
-            n->next = table[index]->next
+            n->next = table[index]->next;
             table[index] = n;
         }
         words++;
