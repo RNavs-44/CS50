@@ -28,7 +28,7 @@ bool check(const char *word)
     int index = hash(word);
 
     // access linked list at that index in hash table
-    cursor = table[index];
+    node *cursor = table[index];
 
     // traverse linked list, looking for word
     while (cursor != NULL)
@@ -107,5 +107,16 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    return false;
+    for (int i = 0; i < N; i++)
+    {
+        node *cursor = table[i];
+        node *tmp = cursor;
+        while (cursor != NULL)
+        {
+            tmp = cursor;
+            cursor = cursor->next;
+            free(tmp);
+        }
+    }
+    return true;
 }
