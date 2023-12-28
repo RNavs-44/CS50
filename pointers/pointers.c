@@ -1,16 +1,12 @@
 // & - provides address of something stored in memory
 // * - instructs compiler to go to a location in memory
 
-#include <cs50.h>
 #include <stdio.h>
 
 int main(void)
 {
-    // Get two strings
-    char *s = get_string("s: ");
-    char *t = get_string("t: ");
-
-    // Print strings
-    printf("%p\n", s);
-    printf("%p\n", t);
+    char *s = "HI!";
+    printf("%c\n", *s);
+    printf("%c\n", *(s + 1));
+    printf("%c\n", *(s + 2));
 }
