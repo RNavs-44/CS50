@@ -34,7 +34,7 @@ unsigned int hash(const char *word)
     {
         sum += str[j];
     }
-    return sum % HASH_MAX;
+    return sum % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
