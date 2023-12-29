@@ -7,7 +7,6 @@ import math
 X = "X"
 O = "O"
 EMPTY = None
-size = 3
 
 def initial_state():
     """
@@ -23,9 +22,9 @@ def player(board):
     Returns player who has the next turn on a board.
     """
     n = 0
-    for row in board:
-        for square in row:
-            if square == EMPTY: n += 1
+    for row in range(len(board)):
+        for col in range(len(board[row])):
+            if board[row][col] == EMPTY: n += 1
     return O if n % 2 == 0 else X
 
 
@@ -45,7 +44,7 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    
+
     return None
 
 
