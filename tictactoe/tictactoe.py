@@ -44,7 +44,7 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-
+    
     return None
 
 def check_row(board, player):
