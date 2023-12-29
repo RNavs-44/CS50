@@ -101,6 +101,7 @@ def shortest_path(source, target):
     # initialize frontier to starting positiion
     start = Node(state=start_state, parent = None, action = None)
     frontier = StackFrontier()
+    frontier.add(start)
 
     # initialize empty explore set
     explored = set()
