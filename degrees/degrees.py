@@ -95,7 +95,7 @@ def shortest_path(source, target):
     num_explored = 0
 
     # initialize frontier to starting positiion
-    start_state = neighbors_for_person(source)
+    start_state = (source)
     start = Node(state=start, parent = None, action = None)
     frontier = StackFrontier()
 
@@ -110,6 +110,11 @@ def shortest_path(source, target):
             raise Exception("no solution")
 
         # choose node to remove from frontier
+        node = frontier.remove()
+        num_explored++
+
+        # if node is goal then we have solution
+        
 
     # TODO
     raise NotImplementedError
