@@ -47,6 +47,9 @@ def result(board, action):
 
     return None
 
+def check_row(row, player):
+    for i in range(len(row)):
+        return True if 
 
 def winner(board):
     """
@@ -54,7 +57,7 @@ def winner(board):
     """
     # check rows
     for row in range(len(board)):
-        
+
 
     # check columns
     # check diagonals
