@@ -54,23 +54,26 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
-    is_winner = True
+    is_winner = False
     # check rows
     for row in board:
         r_set = set(row)
-        if len(r_set) != 1 or r_set[0] == EMPTY:
-            is_winner = False
+        if len(r_set) == 1 and r_set[0] != EMPTY:
+            is_winner = True
 
     # check columns
-    
+    for col in len(board):
+        c_set = set(board[i][col] for i in range(len(board)))
+        if len(c_set) == 1 and c_set[0] != EMPTY:
+            is_winner = True
 
     # check diagonals
     d1_set = set(board[i][i] for i in range(len(board)))
     d2_set = set(board[i][len(board)-i-1] for i in range(len(board)))
-    if len(d1_set) != 1 or d1_set[0] == EMPTY:
-        is_winner = False
-    if len(d2_set) != 1 or d2_set[0] == EMPTY:
-        is_winner = False
+    if len(d1_set) == 1 and d1_set[0] != EMPTY:
+        is_winner = True
+    if len(d2_set) == 1 and d2_set[0] != EMPTY:
+        is_winner = True
 
     return is_winner
 
