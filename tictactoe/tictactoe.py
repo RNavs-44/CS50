@@ -110,5 +110,7 @@ def minimax(board):
     """
     player = player(board)
     if player == O:
+        return min_value(board)
+    elif player == X:
         return max_value(board)
     raise NotImplementedError
