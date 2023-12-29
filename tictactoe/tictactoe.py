@@ -44,7 +44,11 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    
+    if action not in actions(board):
+        raise Exception("invalid action")
+    curr_player = player(board)
+    if curr_player == X:
+        board[action[0]][action[1]]
     return None
 
 def check_row(board, player):
