@@ -54,9 +54,12 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
+    i = True
     # check rows
-    for row in range(len(board)):
-
+    for row in board:
+        row_set = set(row)
+        if len(row_set) == 1 and rows[0] != EMPTY:
+            i = False
 
     # check columns
     # check diagonals
