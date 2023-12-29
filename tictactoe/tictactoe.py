@@ -22,9 +22,9 @@ def player(board):
     Returns player who has the next turn on a board.
     """
     n = 0
-    for row in range(len(board)):
-        for col in range(len(board[row])):
-            if board[row][col] == EMPTY: n += 1
+    for row in board:
+        for sqr in row:
+            if board[row][sqr] == EMPTY: n += 1
     return O if n % 2 == 0 else X
 
 
@@ -46,17 +46,9 @@ def result(board, action):
     """
     if action not in actions(board) or terminal(board):
         raise Exception("invalid action")
-
-    board[action[0]][action[1]] = player(board)
-    return None
-
-def check_row(board, player):
-    for row in range(len(board)):
-        for i in range(len(row)):
-            if row[i] != player: return False
-    return True
-
-def check_col(board, player)
+    board_copy = copy.deepcopy(board)
+    board_copy[action[0]][action[1]] = player(board)
+    return board_copy
 
 def winner(board):
     """
@@ -75,14 +67,25 @@ def terminal(board):
     """
     Returns True if game is over, False otherwise.
     """
-    raise NotImplementedError
+    # check if someone won game
+    if winner(board) != None:
+        return True
+    for row in board:
+        for sqr in row:
+            if board[row][sqr] == EMPTY: return False
+    return True
 
 
 def utility(board):
     """
     Returns 1 if X has won the game, -1 if O has won, 0 otherwise.
     """
-    raise NotImplementedError
+    # assume that only called on terminal board
+    if winner(board) == X:
+        return 1
+    if winner(board) == O:
+        return -1
+    return 0
 
 
 def minimax(board):
