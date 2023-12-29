@@ -94,12 +94,8 @@ def shortest_path(source, target):
     # keep track of number of states explored
     num_explored = 0
 
-    # set start and goal states
-    start_state = (source)
-    goal_state = (target)
-
     # initialize frontier to starting positiion
-    start = Node(state=start_state, parent = None, action = None)
+    start = Node(state = source, parent = None, action = None)
     frontier = StackFrontier()
     frontier.add(start)
 
@@ -118,22 +114,22 @@ def shortest_path(source, target):
         num_explored++
 
         # if node is destination then we have solution
-        if node.state == destination:
+        if node.state == target:
             pairs = []
             while node.parent is not None:
                 pair = (node.action, node.state)
-                actions.append(node.state)
+                pairs.append(pair)
                 node = node.parent
-                actions.reverse()
-                return pairs
+            pairs.reverse()
+            return pairs
 
         # mark node as explored
         explored.add(node.state)
 
         # add neighbors to frontier
-        for movie_id, person_id in neighbors_for_person(node.state):
+        for action, state in neighbors_for_person(node.state):
             if not frontier.contains_state(state) and state not in explored:
-                child = Node(state = state, parent = node, action = movie_id)
+                child = Node(state = state, parent = node, action = action)
                 frontier.add(child)
 
     # TODO
