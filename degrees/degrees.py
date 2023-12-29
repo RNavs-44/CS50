@@ -123,10 +123,10 @@ def shortest_path(source, target):
                 # if node is destination then we have solution
                 if child.state == target:
                     pairs = []
-                    while node.parent is not None:
-                        pair = (node.action, node.state)
+                    while child.parent is not None:
+                        pair = (child.action, child.state)
                         pairs.append(pair)
-                        node = node.parent
+                        child = child.parent
                     pairs.reverse()
                     return pairs
                 frontier.add(child)
