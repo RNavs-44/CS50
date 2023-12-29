@@ -91,17 +91,27 @@ def max_value(state):
     if terminal(state):
         return utility(state)
     v = float("-inf")
+    v_action = (-1, -1)
     for action in actions(state):
-        v = max(v, min_value(result(state, action)))
-    return v
+        # v = max(v, min_value(result(state, action)))
+        curr = min_value(result(state, action))[0]
+        if curr > v:
+            v = curr
+            v_action = action
+    return (v, v_action)
 
 def min_value(state):
     if terminal(state):
         return utility(state)
     v = float("inf")
+    v_action = (-1, -1)
     for action in actions(state):
-        v = min(v, max_value(result(state, action)))
-    return v
+        # v = min(v, max_value(result(state, action)))
+        curr = max_value(result(state, action))[0]
+        if curr > v:
+            v = curr
+            v_action = action
+    return (v, v_action)
 
 
 def minimax(board):
@@ -110,7 +120,7 @@ def minimax(board):
     """
     player = player(board)
     if player == O:
-        return min_value(board)
+        return min_value(board)[1]
     elif player == X:
-        return max_value(board)
+        return max_value(board)[1]
     raise NotImplementedError
