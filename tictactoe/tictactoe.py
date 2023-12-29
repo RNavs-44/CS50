@@ -47,9 +47,13 @@ def result(board, action):
 
     return None
 
-def check_row(row, player):
-    for i in range(len(row)):
-        return True if 
+def check_row(board, player):
+    for row in range(len(board)):
+        for i in range(len(row)):
+            if row[i] != player: return False
+        return True
+
+def check_col(board, player)
 
 def winner(board):
     """
