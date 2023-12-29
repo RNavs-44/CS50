@@ -87,6 +87,7 @@ def utility(board):
         return -1
     return 0
 
+def s
 
 def minimax(board):
     """
