@@ -33,8 +33,8 @@ def actions(board):
     Returns set of all possible actions (i, j) available on the board.
     """
     actions = set()
-    for i in range(size):
-        for j in range(size):
+    for i in range(len(board)):
+        for j in range(len(board[i])):
             if board[i][j] == EMPTY:
                 actions.add((i, j))
     return actions
