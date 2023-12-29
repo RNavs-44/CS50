@@ -87,7 +87,13 @@ def utility(board):
         return -1
     return 0
 
-def s
+def max_value(board):
+    if terminal(board):
+        return utility(board)
+    
+
+def min_value(state):
+
 
 def minimax(board):
     """
