@@ -124,7 +124,16 @@ def shortest_path(source, target):
                 pairs.append(node.state)
                 node = node.parent
                 pairs.reverse()
+                return pairs
 
+        # mark node as explored
+        explored.add(node.state)
+
+        # add neighbors to frontier
+        for action, state in neighbors_for_person(node.state[1]):
+            if not frontier.contains_state(state) and state not in explored:
+                child =
+                frontier.add(child)
 
     # TODO
     raise NotImplementedError
