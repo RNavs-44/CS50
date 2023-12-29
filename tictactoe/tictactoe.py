@@ -44,8 +44,9 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-    if action not in actions(board):
+    if action not in actions(board) or terminal(board):
         raise Exception("invalid action")
+
     board[action[0]][action[1]] = player(board)
     return None
 
