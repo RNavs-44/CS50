@@ -95,7 +95,21 @@ def shortest_path(source, target):
     num_explored = 0
 
     # initialize frontier to starting positiion
-    start = (source)
+    start_state = (source)
+    start = Node(state=start, parent = None, action = None)
+    frontier = StackFrontier()
+
+    # initialize empty explore set
+    explored = set()
+
+    # keep looping until solution found
+    while True:
+
+        # if nothing left in frontier, then no path
+        if frontier.empty():
+            raise Exception("no solution")
+
+        # choose node to remove from frontier
 
     # TODO
     raise NotImplementedError
