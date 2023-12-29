@@ -95,7 +95,7 @@ def shortest_path(source, target):
     num_explored = 0
 
     # initialize frontier to starting positiion
-    start = (Node(state = source, ))
+    start = ()
 
     # TODO
     raise NotImplementedError
