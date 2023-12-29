@@ -116,8 +116,15 @@ def shortest_path(source, target):
         node = frontier.remove()
         num_explored++
 
-        # if node is goal then we have solution
-        if node.state
+        # if node is destination then we have solution
+        if node.state[1] == destination:
+            actions = []
+            pairs = []
+            while node.parent is not None:
+                pairs.append(node.state)
+                node = node.parent
+                pairs.reverse()
+
 
     # TODO
     raise NotImplementedError
