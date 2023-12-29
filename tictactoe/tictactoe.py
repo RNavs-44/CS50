@@ -46,9 +46,7 @@ def result(board, action):
     """
     if action not in actions(board):
         raise Exception("invalid action")
-    curr_player = player(board)
-    if curr_player == X:
-        board[action[0]][action[1]]
+    board[action[0]][action[1]] = player(board)
     return None
 
 def check_row(board, player):
