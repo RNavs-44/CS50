@@ -7,7 +7,7 @@ import math
 X = "X"
 O = "O"
 EMPTY = None
-
+size = 3
 
 def initial_state():
     """
@@ -33,9 +33,11 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    for i in range(0, 3):
-        for j in range(0, 3):
-            
+    
+    for i in range(size):
+        for j in range(size):
+
+
     raise NotImplementedError
 
 
