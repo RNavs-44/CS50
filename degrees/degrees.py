@@ -94,9 +94,12 @@ def shortest_path(source, target):
     # keep track of number of states explored
     num_explored = 0
 
-    # initialize frontier to starting positiion
+    # set start and goal states
     start_state = (source)
-    start = Node(state=start, parent = None, action = None)
+    goal_state = (target)
+
+    # initialize frontier to starting positiion
+    start = Node(state=start_state, parent = None, action = None)
     frontier = StackFrontier()
 
     # initialize empty explore set
