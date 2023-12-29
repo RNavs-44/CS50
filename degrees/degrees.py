@@ -39,7 +39,7 @@ def load_data(directory):
                 "title": row["title"],
                 "year": row["year"],
                 "stars": set()
-            }
+}
 
     # Load stars
     with open(f"{directory}/stars.csv", encoding="utf-8") as f:
@@ -95,7 +95,7 @@ def shortest_path(source, target):
     num_explored = 0
 
     # initialize frontier to starting positiion
-    start = Node(state = source, parent = None, action = None)
+    start = Node(state=source, parent=None, action=None)
     frontier = QueueFrontier()
     frontier.add(start)
 
@@ -104,7 +104,6 @@ def shortest_path(source, target):
 
     # keep looping until solution found
     while True:
-
         # if nothing left in frontier, then no path
         if frontier.empty():
             raise Exception("no solution")
@@ -119,7 +118,7 @@ def shortest_path(source, target):
         # add neighbors to frontier
         for action, state in neighbors_for_person(node.state):
             if not frontier.contains_state(state) and state not in explored:
-                child = Node(state = state, parent = node, action = action)
+                child = Node(state=state, parent=node, action=action)
                 # if node is destination then we have solution
                 if child.state == target:
                     pairs = []
