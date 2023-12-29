@@ -91,7 +91,12 @@ def shortest_path(source, target):
 
     If no possible path, returns None.
     """
-    
+    # keep track of number of states explored
+    num_explored = 0
+
+    # initialize frontier to starting positiion
+    start = Node(state = source)
+
     # TODO
     raise NotImplementedError
 
