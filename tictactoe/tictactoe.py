@@ -51,7 +51,7 @@ def check_row(board, player):
     for row in range(len(board)):
         for i in range(len(row)):
             if row[i] != player: return False
-        return True
+    return True
 
 def check_col(board, player)
 
