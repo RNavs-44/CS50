@@ -114,7 +114,7 @@ def shortest_path(source, target):
         num_explored++
 
         # if node is goal then we have solution
-        
+        if node.state
 
     # TODO
     raise NotImplementedError
