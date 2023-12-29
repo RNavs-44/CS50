@@ -95,7 +95,7 @@ def shortest_path(source, target):
     num_explored = 0
 
     # initialize frontier to starting positiion
-    start_state = (source)
+    start_state = neighbors_for_person(source)
     start = Node(state=start, parent = None, action = None)
     frontier = StackFrontier()
 
