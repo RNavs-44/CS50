@@ -87,12 +87,21 @@ def utility(board):
         return -1
     return 0
 
-def max_value(board):
-    if terminal(board):
-        return utility(board)
-    
+def max_value(state):
+    if terminal(state):
+        return utility(state)
+    v = float("-inf")
+    for action in actions(state):
+        v = max(v, min_value(result(state, action)))
+    return v
 
 def min_value(state):
+    if terminal(state):
+        return utility(state)
+    v = float("inf")
+    for action in actions(state):
+        v = min(v, max_value(result(state, action)))
+    return v
 
 
 def minimax(board):
