@@ -26,7 +26,8 @@ knowledge0 = And(
 knowledge1 = And(
     And(Or(AKnight, AKnave), And(AKnight, AKnave)),
     And(Or(BKnight, BKnave), And(BKnight, BKnave)),
-    
+    Implication(AKnight, And(AKnight, BKnight)),
+    Implication(BKnight, Not(And(AKnight, BKnight)))
     # TODO
 )
 
@@ -34,7 +35,10 @@ knowledge1 = And(
 # A says "We are the same kind."
 # B says "We are of different kinds."
 knowledge2 = And(
-
+    And(Or(AKnight, AKnave), And(AKnight, AKnave)),
+    And(Or(BKnight, BKnave), And(BKnight, BKnave)),
+    Implication(AKnight, Or(And(AKnight, BKnight), And(AKnave, BKnave))),
+    Implication(AKnight, Or(And(AKnave, BKnave), And(AKnave, BKnave))),
     # TODO
 )
 
