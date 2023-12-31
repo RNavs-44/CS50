@@ -24,6 +24,9 @@ knowledge0 = And(
 # A says "We are both knaves."
 # B says nothing.
 knowledge1 = And(
+    And(Or(AKnight, AKnave), And(AKnight, AKnave)),
+    And(Or(BKnight, BKnave), And(BKnight, BKnave)),
+    
     # TODO
 )
 
@@ -31,6 +34,7 @@ knowledge1 = And(
 # A says "We are the same kind."
 # B says "We are of different kinds."
 knowledge2 = And(
+
     # TODO
 )
 
