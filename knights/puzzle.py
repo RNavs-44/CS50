@@ -13,7 +13,7 @@ CKnave = Symbol("C is a Knave")
 # A says "I am both a knight and a knave."
 knowledge0 = And(
     # A is a knight or a knave
-    And(Or(AKnight, AKnave), And(AKnight, AKnave)),
+    And(Or(AKnight, AKnave), Not(And(AKnight, AKnave))),
     # if A is a knight, it is both a knight and a knave i.e. telling truth
     Implication(AKnight, And(AKnight, AKnave)),
     #if A is a knave, it is not both a knight and a knave i.e. lying
@@ -24,8 +24,8 @@ knowledge0 = And(
 # A says "We are both knaves."
 # B says nothing.
 knowledge1 = And(
-    And(Or(AKnight, AKnave), And(AKnight, AKnave)),
-    And(Or(BKnight, BKnave), And(BKnight, BKnave)),
+    And(Or(AKnight, AKnave), Not(And(AKnight, AKnave))),
+    And(Or(BKnight, BKnave), Not(And(BKnight, BKnave))),
     Implication(AKnight, And(AKnight, BKnight)),
     Implication(BKnight, Not(And(AKnight, BKnight)))
     # TODO
@@ -35,8 +35,8 @@ knowledge1 = And(
 # A says "We are the same kind."
 # B says "We are of different kinds."
 knowledge2 = And(
-    And(Or(AKnight, AKnave), And(AKnight, AKnave)),
-    And(Or(BKnight, BKnave), And(BKnight, BKnave)),
+    And(Or(AKnight, AKnave), Not(And(AKnight, AKnave))),
+    And(Or(BKnight, BKnave), Not(And(BKnight, BKnave))),
     Implication(AKnight, Or(And(AKnight, BKnight), And(AKnave, BKnave))),
     Implication(AKnave, Not(Or(And(AKnave, BKnave), And(AKnave, BKnave)))),
     Implication(BKnight, Or(And(AKnave, BKnight), And(BKnave, AKnight))),
@@ -50,13 +50,14 @@ knowledge2 = And(
 # B says "C is a knave."
 # C says "A is a knight."
 knowledge3 = And(
-    And(Or(AKnight, AKnave), And(AKnight, AKnave)),
-    And(Or(BKnight, BKnave), And(BKnight, BKnave)),
-    And(Or(CKnight, CKnave), And(CKnight, CKnave)),
-    Implication(AKnight, Or(And(AKnight, BKnight), And(AKnave, BKnave))),
-    Implication(AKnave, Not(Or(And(AKnave, BKnave), And(AKnave, BKnave)))),
-    Implication(BKnight, Or(And(AKnave, BKnight), And(BKnave, AKnight))),
-    Implication(BKnave, Not(CKnave))
+    And(Or(AKnight, AKnave), Not(And(AKnight, AKnave))),
+    And(Or(BKnight, BKnave), Not(And(BKnight, BKnave))),
+    And(Or(CKnight, CKnave), Not(And(CKnight, CKnave))),
+    Implication(BKnight, And(
+        CKnave,
+        Implication(AKnight, AKnave)
+        Implication(AKnave, Not(AKnave))))
+    Implication(BKnave, And(Not(CKnave))
     Implication(CKnight, AKnight),
     Implication(CKnave, Not(AKnight))
     # TODO
