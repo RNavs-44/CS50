@@ -25,7 +25,7 @@ def load_data(directory):
                 "name": row["name"],
                 "birth": row["birth"],
                 "movies": set()
-            }
+                }
             if row["name"].lower() not in names:
                 names[row["name"].lower()] = {row["id"]}
             else:
