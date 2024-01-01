@@ -116,13 +116,18 @@ class Sentence():
         """
         Returns the set of all cells in self.cells known to be safe.
         """
-        if self.count == 0
+        if self.count == 0:
+            return self.cells
+        else:
+            return set()
 
     def mark_mine(self, cell):
         """
         Updates internal knowledge representation given the fact that
         a cell is known to be a mine.
         """
+        if cell in self.cells:
+            
         raise NotImplementedError
 
     def mark_safe(self, cell):
