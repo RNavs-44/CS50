@@ -130,9 +130,6 @@ def shortest_path(source, target):
                     return pairs
                 frontier.add(child)
 
-    # TODO
-    raise NotImplementedError
-
 
 def person_id_for_name(name):
     """
