@@ -105,14 +105,18 @@ class Sentence():
         """
         Returns the set of all cells in self.cells known to be mines.
         """
-        for cell in self.cells
-        raise NotImplementedError
+        # if {E, F, H} = 3 we can infer all 3 are mines
+        # if {E, F, H} = 2 we cannot infer anything
+        if len(self.cells) == self.count && self.count != 0:
+            return self.cells
+        else:
+            return set()
 
     def known_safes(self):
         """
         Returns the set of all cells in self.cells known to be safe.
         """
-        raise NotImplementedError
+        if self.count == 0
 
     def mark_mine(self, cell):
         """
