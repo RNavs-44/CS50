@@ -16,7 +16,7 @@ knowledge0 = And(
     And(Or(AKnight, AKnave), Not(And(AKnight, AKnave))),
     # if A is a knight, it is both a knight and a knave i.e. telling truth
     Implication(AKnight, And(AKnight, AKnave)),
-    #if A is a knave, it is not both a knight and a knave i.e. lying
+    # if A is a knave, it is not both a knight and a knave i.e. lying
     Implication(AKnave, Not(And(AKnight, AKnave)))
 )
 
@@ -26,8 +26,8 @@ knowledge0 = And(
 knowledge1 = And(
     And(Or(AKnight, AKnave), Not(And(AKnight, AKnave))),
     And(Or(BKnight, BKnave), Not(And(BKnight, BKnave))),
-    Implication(AKnight, And(AKnight, BKnight)),
-    Implication(BKnight, Not(And(AKnight, BKnight)))
+    Implication(AKnight, And(AKnave, BKnave)),
+    Implication(AKnave, Not(And(AKnave, BKnave)))
     # TODO
 )
 
