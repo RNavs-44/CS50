@@ -38,9 +38,9 @@ def actions(board):
     for j in range(len(board[i])):
       if board[i][j] == EMPTY:
         possible_actions.add((i, j))
-  #possible_actions = list(possible_actions)
-  #possible_actions.sort(key=evaluate_action, reverse=True)
-  return possible_actions
+  possible_actions = list(possible_actions)
+  possible_actions.sort(key=evaluate_action, reverse=True)
+  return set(possible_actions)
 
 def evaluate_action(action):
   multiplier = [[3, 2, 3], [2, 4, 2], [3, 2, 3]]
