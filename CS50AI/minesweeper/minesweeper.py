@@ -208,9 +208,7 @@ class MinesweeperAI():
                 # Update count if cell in bounds and is mine
                 if 0 <= i < self.height and 0 <= j < self.width:
                     if (i, j) not in self.mines and (i, j) not in self.moves_made:
-                        count += 1
-
-        return count
+                        new_cells.add((i, j))
 
     def make_safe_move(self):
         """
