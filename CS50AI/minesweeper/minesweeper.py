@@ -207,7 +207,7 @@ class MinesweeperAI():
                     continue
                 # Update count if cell in bounds and is mine
                 if 0 <= i < self.height and 0 <= j < self.width:
-                    if (i, j) not in:
+                    if (i, j) not in self.mines:
                         count += 1
 
         return count
